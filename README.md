@@ -1153,22 +1153,22 @@ Database Layer (MySQL/NoSQL)
 - File upload functionality
 
 **API Endpoints:**
-- `POST /auth/register` - User registration
-- `POST /auth/login` - User login
-- `GET /api/projects` - List all projects
-- `POST /api/projects` - Create new project
-- `GET /api/projects/:id` - Get project details
-- `PUT /api/projects/:id` - Update project
-- `DELETE /api/projects/:id` - Delete project
-- `GET /api/projects/:id/tasks` - List tasks in project
-- `POST /api/projects/:id/tasks` - Create task
-- `PUT /api/tasks/:id` - Update task
-- `DELETE /api/tasks/:id` - Delete task
-- `POST /api/tasks/:id/comments` - Add comment
-- `GET /api/tasks/:id/comments` - Get comments
-- `POST /api/tasks/:id/attachments` - Upload file
-- `GET /api/users/me` - Get current user profile
-- `GET /api/analytics/dashboard` - Get dashboard statistics
+- `POST /auth/register` - User registration `[Public]`
+- `POST /auth/login` - User login `[Public]`
+- `GET /api/projects` - List all projects `[Admin, Manager, Member]`
+- `POST /api/projects` - Create new project `[Admin, Manager]`
+- `GET /api/projects/:id` - Get project details `[Admin, Manager, Member]`
+- `PUT /api/projects/:id` - Update project `[Admin, Manager]`
+- `DELETE /api/projects/:id` - Delete project `[Admin, Manager]`
+- `GET /api/projects/:id/tasks` - List tasks in project `[Admin, Manager, Member]`
+- `POST /api/projects/:id/tasks` - Create task `[Admin, Manager, Member]`
+- `PUT /api/tasks/:id` - Update task `[Admin, Manager, Member]`
+- `DELETE /api/tasks/:id` - Delete task `[Admin, Manager]`
+- `POST /api/tasks/:id/comments` - Add comment `[Admin, Manager, Member]`
+- `GET /api/tasks/:id/comments` - Get comments `[Admin, Manager, Member]`
+- `POST /api/tasks/:id/attachments` - Upload file `[Admin, Manager, Member]`
+- `GET /api/users/me` - Get current user profile `[Admin, Manager, Member]`
+- `GET /api/analytics/dashboard` - Get dashboard statistics `[Admin, Manager]`
 
 **Database Schema (MySQL or NoSQL):**
 - Users (id, email, password, name, role, created_at)
