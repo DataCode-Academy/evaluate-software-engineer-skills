@@ -24,6 +24,8 @@ A comprehensive guide to evaluating software engineers across different technolo
   - [NoSQL](#nosql)
 - [Assessment Methodology](#assessment-methodology)
 - [Scoring Guidelines](#scoring-guidelines)
+- [Full-Stack Cross-Technology Assignment](#full-stack-cross-technology-assignment)
+- [How to Use This Guide](#how-to-use-this-guide)
 
 ---
 
@@ -1116,6 +1118,315 @@ When evaluating submissions, consider:
 - **Senior Assignment:** 16-24 hours
 
 Allow candidates to complete assignments within 1-2 weeks based on availability.
+
+---
+
+## Full-Stack Cross-Technology Assignment
+
+This comprehensive assignment tests skills across multiple technologies by building a complete, integrated system with API connections between components.
+
+### Project: Task Management & Collaboration Platform
+
+Build a full-featured task management system that demonstrates proficiency across frontend, backend, mobile, and database technologies.
+
+### System Architecture
+
+```
+Mobile Apps (Flutter/React Native/iOS/Android)
+              ↓ REST/GraphQL API
+Web Frontend (ReactJS/NextJS)
+              ↓ REST/GraphQL API
+Backend API (NestJS/ExpressJS/Laravel)
+              ↓
+Database Layer (MySQL/NoSQL)
+```
+
+### Core Requirements
+
+#### 1. Backend API (Choose: NestJS, ExpressJS, or Laravel)
+
+**Required Features:**
+- RESTful or GraphQL API endpoints
+- User authentication (JWT or session-based)
+- Authorization with role-based access control (Admin, Manager, Member)
+- Real-time updates (WebSocket/SSE)
+- File upload functionality
+
+**API Endpoints:**
+- `POST /auth/register` - User registration
+- `POST /auth/login` - User login
+- `GET /api/projects` - List all projects
+- `POST /api/projects` - Create new project
+- `GET /api/projects/:id` - Get project details
+- `PUT /api/projects/:id` - Update project
+- `DELETE /api/projects/:id` - Delete project
+- `GET /api/projects/:id/tasks` - List tasks in project
+- `POST /api/projects/:id/tasks` - Create task
+- `PUT /api/tasks/:id` - Update task
+- `DELETE /api/tasks/:id` - Delete task
+- `POST /api/tasks/:id/comments` - Add comment
+- `GET /api/tasks/:id/comments` - Get comments
+- `POST /api/tasks/:id/attachments` - Upload file
+- `GET /api/users/me` - Get current user profile
+- `GET /api/analytics/dashboard` - Get dashboard statistics
+
+**Database Schema (MySQL or NoSQL):**
+- Users (id, email, password, name, role, created_at)
+- Projects (id, name, description, owner_id, created_at)
+- Tasks (id, project_id, title, description, status, priority, assigned_to, due_date, created_at)
+- Comments (id, task_id, user_id, content, created_at)
+- Attachments (id, task_id, file_name, file_path, uploaded_by, created_at)
+
+#### 2. Web Frontend (Choose: ReactJS or NextJS)
+
+**Required Features:**
+- Responsive dashboard with project overview
+- Project management (CRUD operations)
+- Task board with drag-and-drop (Kanban view)
+- Task list view with filtering and sorting
+- Real-time updates when tasks change
+- File upload and preview
+- User authentication UI
+- Analytics dashboard with charts
+
+**Key Pages:**
+- Login/Register page
+- Dashboard (overview of all projects)
+- Project detail page with task list
+- Kanban board view
+- Task detail modal/page
+- User profile page
+- Analytics page
+
+#### 3. Mobile App (Choose: Flutter, React Native, Android Kotlin, KMP, or iOS Native)
+
+**Required Features:**
+- User authentication
+- Project list view
+- Task list with pull-to-refresh
+- Task creation and editing
+- Push notifications for task updates
+- Offline support with local caching
+- File attachment viewing
+- Dark mode support
+
+**Key Screens:**
+- Login/Register
+- Projects list
+- Task list (by project)
+- Task detail
+- Create/Edit task
+- Profile settings
+
+#### 4. Database (Choose: MySQL or NoSQL)
+
+**Required Implementation:**
+- Proper schema design with relationships
+- Indexes for performance optimization
+- Data validation and constraints
+- Migration scripts
+- Seed data for testing
+
+**For MySQL:**
+- Normalized schema (3NF)
+- Foreign key constraints
+- Transactions for data consistency
+
+**For NoSQL (MongoDB/Firebase):**
+- Document structure design
+- Embedded vs referenced relationships
+- Compound indexes
+- Data denormalization where appropriate
+
+### Evaluation Criteria by Level
+
+#### Junior Level (Pick 2-3 technologies)
+
+**Time:** 16-24 hours over 2 weeks
+
+**Minimum Requirements:**
+- Implement backend with 5-8 basic API endpoints
+- Simple web frontend with login and task list
+- OR simple mobile app with login and task list
+- Basic database with 3-4 tables/collections
+- Basic authentication
+- API integration working
+
+**Evaluation Focus:**
+- Does the basic flow work end-to-end?
+- Is code organized and readable?
+- Are API endpoints properly structured?
+- Is authentication implemented correctly?
+- Does the UI display data from API?
+
+#### Mid Level (Pick 3-4 technologies)
+
+**Time:** 24-40 hours over 2 weeks
+
+**Minimum Requirements:**
+- Complete backend API with all endpoints
+- Web frontend with most features OR mobile app with offline support
+- Database with proper relationships and indexes
+- Authentication and basic authorization
+- Real-time updates
+- File upload functionality
+- Unit and integration tests
+- API documentation
+
+**Evaluation Focus:**
+- Is the architecture well-designed?
+- Are state management and data flow handled properly?
+- Is error handling comprehensive?
+- Are tests meaningful and cover key flows?
+- Is the API well-documented?
+- Does it handle edge cases?
+
+#### Senior Level (All or most technologies)
+
+**Time:** 40-60 hours over 3 weeks
+
+**Minimum Requirements:**
+- Complete backend API with advanced features
+- Both web and mobile applications
+- Optimized database with proper indexing
+- Role-based authorization
+- Real-time updates across all clients
+- File upload with validation
+- Comprehensive testing (unit, integration, e2e)
+- API documentation (Swagger/OpenAPI)
+- Docker containerization
+- CI/CD pipeline configuration
+- Performance optimization
+- Security best practices
+
+**Evaluation Focus:**
+- Is the system architecture scalable?
+- Are all components well-integrated?
+- Is code quality exceptional across all parts?
+- Are security considerations addressed?
+- Is performance optimized?
+- Are tests comprehensive?
+- Is documentation complete?
+- Can the system handle production loads?
+- How are errors and edge cases handled?
+
+### Technology-Specific Evaluation
+
+When evaluating this assignment, use the technology-specific criteria from the respective sections above, plus:
+
+**Backend (NestJS/ExpressJS/Laravel):**
+- API design and RESTful principles
+- Authentication/authorization implementation
+- Database query optimization
+- Error handling and validation
+- API documentation quality
+
+**Frontend (ReactJS/NextJS):**
+- Component architecture
+- State management
+- API integration patterns
+- Responsive design
+- Performance optimization
+
+**Mobile (Flutter/React Native/Android/iOS):**
+- Native features utilization
+- Offline functionality
+- State management
+- API integration
+- Platform-specific considerations
+
+**Database (MySQL/NoSQL):**
+- Schema/document design
+- Query performance
+- Data integrity
+- Indexing strategy
+- Migration management
+
+### Bonus Features (Optional)
+
+- Search functionality across projects and tasks
+- Email notifications
+- Export data to CSV/PDF
+- Activity log/audit trail
+- Multi-language support
+- Dark/light theme toggle
+- Calendar view for tasks
+- Time tracking
+- Comments with mentions (@user)
+- Task dependencies
+- Recurring tasks
+- Team collaboration features
+- Integration with third-party services (Slack, email, etc.)
+
+### Submission Requirements
+
+Candidates should provide:
+
+1. **Source Code:**
+   - Git repository (GitHub/GitLab)
+   - Separate folders for each component
+   - Clear folder structure
+   - .gitignore properly configured
+
+2. **Documentation:**
+   - README with setup instructions
+   - API documentation
+   - Architecture diagrams
+   - Database schema documentation
+   - Environment variables template
+
+3. **Running Instructions:**
+   - How to install dependencies
+   - How to set up the database
+   - How to run backend, frontend, and mobile
+   - How to run tests
+   - Demo credentials if applicable
+
+4. **Demo:**
+   - Deployed demo (optional but recommended)
+   - OR video walkthrough
+   - OR live demo during interview
+
+### Scoring Breakdown
+
+| Category | Weight | What to Evaluate |
+|----------|--------|------------------|
+| **Functionality** | 25% | All required features work, API connections successful |
+| **Code Quality** | 20% | Clean, maintainable code across all components |
+| **Architecture** | 20% | Well-structured system, proper separation of concerns |
+| **API Design** | 15% | RESTful principles, proper error handling, documentation |
+| **Testing** | 10% | Adequate test coverage across components |
+| **Documentation** | 5% | Clear README, setup instructions, API docs |
+| **Security** | 5% | Authentication, authorization, input validation |
+
+### Interview Discussion Points
+
+After reviewing the assignment, discuss:
+
+1. **Architecture Decisions:**
+   - Why did you choose this structure?
+   - What trade-offs did you consider?
+   - How would you scale this system?
+
+2. **Challenges Faced:**
+   - What was the most difficult part?
+   - How did you solve technical challenges?
+   - What would you do differently?
+
+3. **Technology Choices:**
+   - Why did you choose these specific technologies?
+   - What alternatives did you consider?
+   - How do these technologies work together?
+
+4. **Future Improvements:**
+   - What would you add given more time?
+   - How would you handle 10x more users?
+   - What performance optimizations would you implement?
+
+5. **Testing Strategy:**
+   - How did you approach testing?
+   - What test types did you implement?
+   - How would you improve test coverage?
 
 ---
 
