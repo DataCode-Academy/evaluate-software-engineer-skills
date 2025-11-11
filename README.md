@@ -1171,7 +1171,8 @@ Database Layer (MySQL/NoSQL)
 - `GET /api/analytics/dashboard` - Get dashboard statistics `[Admin, Manager]`
 
 **Database Schema (MySQL or NoSQL):**
-- Users (id, email, password, name, role, created_at)
+- Users (id, email, password_hash, name, role, created_at)
+  - Note: `password_hash` stores a securely hashed password, never plain text.
 - Projects (id, name, description, owner_id, created_at)
 - Tasks (id, project_id, title, description, status, priority, assigned_to, due_date, created_at)
 - Comments (id, task_id, user_id, content, created_at)
