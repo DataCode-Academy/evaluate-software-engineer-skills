@@ -1175,6 +1175,8 @@ Database Layer (MySQL/NoSQL)
   - Note: `password_hash` stores a securely hashed password, never plain text.
 - Projects (id, name, description, owner_id, created_at)
 - Tasks (id, project_id, title, description, status, priority, assigned_to, due_date, created_at)
+  - `status`: enum ['todo', 'in_progress', 'done']
+  - `priority`: enum ['low', 'medium', 'high']
 - Comments (id, task_id, user_id, content, created_at)
 - Attachments (id, task_id, file_name, file_path, uploaded_by, created_at)
 
